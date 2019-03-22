@@ -8,8 +8,8 @@ difficult elements as time permits.
 Every student should be able to print the string and the
 length of the string.  If you don't remember how, LOOK at
 your programming sessions!!!   
-PUT YOUR NAME HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+Abi Clayton
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
@@ -59,8 +59,59 @@ def test_problem2():
     print('Test case 1 Actual: ')
     problem3(string_of_characters)
     print('*********************************************')
-    # TODO: 2. Write at least three reasonable test cases below.
+    # Done: 2. Write at least three reasonable test cases below.
     #         Three excellent test cases are worth 10 points
+
+    # Test 2: given string is hello
+    print('*********************************************')
+    print('Test case 2 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'hello'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 5)
+    print('Number of alphabetic characters: ', 5)
+    print('Number of digits: ', 0)
+    print('Reversed string is: olleh')
+    print('The user entered a normal string')
+    print()
+    print('*********************************************')
+    print('Test case 2 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
+
+    # Test 3: given string is backwards
+    print('*********************************************')
+    print('Test case 3 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'backwards'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 9)
+    print('Number of alphabetic characters: ', 9)
+    print('Number of digits: ', 0)
+    print('Reversed string is: sdrawkcab')
+    print('The user entered a normal string')
+    print()
+    print('*********************************************')
+    print('Test case 3 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
+
+    # Test 4: given string is a1b2c3d4
+    print('*********************************************')
+    print('Test case 4 Expected: ')
+    print('*********************************************')
+    string_of_characters = 'a1b2c3d4'
+    print('String entered: ', string_of_characters)
+    print('Length of string: ', 8)
+    print('Number of alphabetic characters: ', 4)
+    print('Number of digits: ', 4)
+    print('Reversed string is: 4d3c2b1a')
+    print('The user entered a normal string')
+    print()
+    print('*********************************************')
+    print('Test case 4 Actual: ')
+    problem3(string_of_characters)
+    print('*********************************************')
 
 
 def problem3(string_of_characters):
@@ -126,6 +177,23 @@ def problem3(string_of_characters):
     # If you write your own method to reverse a string and solve
     # the entire problem, you will get 25 points. If you use the
     # provided method reverseString(string),you will get 20 points
+
+    print(string_of_characters)
+    print(len(string_of_characters))
+
+    letters = 0
+    digits = 0
+    for k in range(len(string_of_characters)):
+        if string_of_characters[k] is str:
+            letters = letters + 1
+        elif string_of_characters[k] is int:
+            digits = digits + 1
+    print(letters)
+    print(digits)
+    
+
+
+
 
 # -----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
