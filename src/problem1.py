@@ -15,6 +15,7 @@ def main():
     run_test_init()
     run_test_go_to_floor()
     run_test_get_passengers()
+    run_test_lose_passengers()
 
 
 ###############################################################################
@@ -159,11 +160,19 @@ class Elevator(object):
             return False
 
 # ---------------------------------------------------------------------
-#     TODO: 7. Write methods, AS NEEDED, to allow passengers to exit
+#     Done: 7. Write methods, AS NEEDED, to allow passengers to exit
 #      the elevator.  Show that your solution works with a test case. (2 pts)
 #     Write the testing code (below) before writing this function.
 # ---------------------------------------------------------------------
 # ---------------------------------------------------------------------
+
+    def lose_passengers(self, num_exiting):
+        if self.passengers - num_exiting >=0:
+            self.passengers = self.passengers - num_exiting
+            return True
+        else:
+            return False
+
 ###############################################################################
 # The TEST functions for the  Elevator  class begin here.
 ###############################################################################
@@ -299,6 +308,24 @@ def run_test_get_passengers():
     print('Actual:', e3.capacity, e3.num_floors, e3.passengers)
 
 
+def run_test_lose_passengers():
+    print()
+    print('-----------------------------------------------------------')
+    print('Testing the   lose_passengers   method of the Elevator class.')
+    print('-----------------------------------------------------------')
+
+    # Test 1: lose 5 passengers on elevator with 15 people
+    e1 = Elevator(20, 18)
+    e1.passengers = 15
+    expected_capacity = 20
+    expected_num_floors = 18
+    expected_num_passengers = 10
+    print()
+    print('Expected passengers leave ', True)
+    print('Expected:', expected_capacity, expected_num_floors, expected_num_passengers)
+    print()
+    print('Actual:', e1.lose_passengers(5))
+    print('Actual:', e1.capacity, e1.num_floors, e1.passengers)
 
 
 def print_failure_message():
