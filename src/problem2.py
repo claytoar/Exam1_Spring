@@ -184,15 +184,22 @@ def problem3(string_of_characters):
     letters = 0
     digits = 0
     for k in range(len(string_of_characters)):
-        if string_of_characters[k] is str:
+        if type(string_of_characters[k]) is str:
             letters = letters + 1
-        elif string_of_characters[k] is int:
+        elif type(string_of_characters[k]) is int:
             digits = digits + 1
     print(letters)
     print(digits)
-    
 
+    string = ''
+    for i in range(len(string_of_characters)-1, -1, -1):
+        string = string + string_of_characters[i]
+    print(string)
 
+    if string_of_characters == string:
+        print('The user entered a palindrome')
+    else:
+        print('The user entered a normal string')
 
 
 # -----------------------------------------------------------------------
